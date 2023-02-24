@@ -8,6 +8,7 @@ jobs:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
+      - run: firebase experiments:enable webframeworks
       - uses: actions/checkout@v2
       - run: npm ci
       - uses: FirebaseExtended/action-hosting-deploy@v0
